@@ -6,8 +6,11 @@ const connectDatabase = require("./config/database");
 const errorMiddleware=require("./middleware/error")
 dotenv.config({ path: path.join(__dirname, "./config/config.env") });
 
+const auth=require("./routes/auth")
 connectDatabase();
 app.use("/api/v1/",products)
+app.use("/api/v1/",auth)
+
 
 
 
