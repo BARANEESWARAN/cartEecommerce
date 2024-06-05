@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const connectDatabase = () => {
     // const uri = process.env.DATABASE_LOCAL_URI; // Ensure this matches the key in your .env file
-    const uri = `mongodb://venkat:venkatsync@ac-cvujciz-shard-00-00.mrcd7u6.mongodb.net:27017,ac-cvujciz-shard-00-01.mrcd7u6.mongodb.net:27017,ac-cvujciz-shard-00-02.mrcd7u6.mongodb.net:27017/?ssl=true&replicaSet=atlas-ejlo8h-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Freelancer`;
+    const uri =process.env.DATABASE_LOCAL_URI ;
     if (!uri) {
       console.error('MongoDB URI is not defined. Please set MONGODB_URI in your environment variables.');
       process.exit(1);
