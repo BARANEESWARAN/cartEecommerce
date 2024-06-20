@@ -1,15 +1,16 @@
 const app = require("./app");
-const products=require("./routes/products")
+
 const dotenv = require("dotenv");
 const path = require("path");
 const connectDatabase = require("./config/database");
 const errorMiddleware=require("./middleware/error")
 dotenv.config({ path: path.join(__dirname, "./config/config.env") });
-
-const auth=require("./routes/auth")
+const client=require("./routes/client")
+const freelancer=require("./routes/freelancer")
 connectDatabase();
-app.use("/api/v1/",products)
-app.use("/api/v1/",auth)
+
+app.use("/api/v1",client)
+app.use("/api/v1",freelancer)
 
 
 
